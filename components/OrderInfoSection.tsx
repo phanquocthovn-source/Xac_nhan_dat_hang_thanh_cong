@@ -17,23 +17,19 @@ const OrderInfoSection: React.FC<OrderInfoSectionProps> = ({ customer, order }) 
             Xác nhận thông tin
           </h2>
 
-          <div className="text-left text-midas-text">
+          <div className="text-left text-midas-text text-base">
             <h3 className="text-xl font-bold text-midas-text mb-4">Thông tin của bạn</h3>
-            <div className="space-y-3 text-base leading-relaxed">
-              <p><strong className="font-semibold">Họ và tên: </strong><span>{customer.name}</span></p>
-              <p><strong className="font-semibold">Số điện thoại: </strong><span>{customer.phone}</span></p>
-              <p><strong className="font-semibold">Địa chỉ: </strong><span>{customer.address}</span></p>
-            </div>
+            <p className="leading-relaxed"><strong className="font-semibold">Họ và tên: </strong><span>{customer.name}</span></p>
+            <p className="leading-relaxed"><strong className="font-semibold">Số điện thoại: </strong><span>{customer.phone}</span></p>
+            <p className="leading-relaxed"><strong className="font-semibold">Địa chỉ: </strong><span>{customer.address}</span></p>
             
-            <hr className="my-8 border-t border-gray-200" />
+            <hr className="my-5 border-0 border-t border-gray-200" />
 
             <h3 className="text-xl font-bold text-midas-text mb-4">Thông tin đơn hàng</h3>
-            <div className="space-y-3 text-base leading-relaxed">
-              <p><strong className="font-semibold">Sản phẩm: </strong><span>{order.productName}</span></p>
-              <p><strong className="font-semibold">Kích thước: </strong><span>{order.size}</span></p>
-              <p><strong className="font-semibold">Màu sắc: </strong><span>{order.color}</span></p>
-              <p><strong className="font-semibold">Tổng tiền: </strong><span>{order.price}</span></p>
-            </div>
+            <p className="leading-relaxed"><strong className="font-semibold">Sản phẩm: </strong><span>{order.productName}</span></p>
+            <p className="leading-relaxed"><strong className="font-semibold">Kích thước: </strong><span>{order.size}</span></p>
+            <p className="leading-relaxed"><strong className="font-semibold">Màu sắc: </strong><span>{order.color}</span></p>
+            <p className="leading-relaxed"><strong className="font-semibold">Tổng tiền: </strong><span>{order.price}</span></p>
           </div>
 
           <div className="mt-12 bg-midas-accent/10 border-l-4 border-midas-accent p-4 rounded-r-md">
