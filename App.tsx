@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import HeroSection from './components/HeroSection';
 import OrderInfoSection from './components/OrderInfoSection';
 import CtaSection from './components/CtaSection';
@@ -7,13 +7,25 @@ import Footer from './components/Footer';
 import type { CustomerInfo } from './types';
 
 const App: React.FC = () => {
-  // In a real application, this data would be passed from the order page
-  // via props, context, or a state management library.
-  const [customerInfo] = useState<CustomerInfo>({
-    name: 'Nguyễn Văn An',
-    phone: '0987 654 321',
-    address: '123 Đường ABC, Phường X, Quận Y, TP. Hồ Chí Minh',
+  const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
+    name: '',
+    phone: '',
+    address: '',
   });
+
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      // Sử dụng giá trị mặc định nếu tham số không có trên URL
+      const name = params.get('ho_ten') || 'Chưa cung cấp';
+      const phone = params.get('sdt') || 'Chưa cung cấp';
+      const address = params.get('dia_chi') || 'Chưa cung cấp';
+
+      setCustomerInfo({ name, phone, address });
+    } catch (e) {
+      console.error('Lỗi khi đọc thông tin khách hàng từ URL:', e);
+    }
+  }, []); // Mảng rỗng đảm bảo hiệu ứng này chỉ chạy một lần khi component được mount
 
   return (
     <div className="min-h-screen flex flex-col">

@@ -7,13 +7,6 @@ interface OrderInfoSectionProps {
   customer: CustomerInfo;
 }
 
-const InfoRow: React.FC<{ label: string; value: string }> = ({ label, value }) => (
-  <div className="flex flex-col sm:flex-row sm:items-center py-3 border-b border-gray-200 last:border-b-0">
-    <p className="w-full sm:w-1/3 text-md text-midas-text/70 mb-1 sm:mb-0">{label}</p>
-    <p className="w-full sm:w-2/3 text-md font-semibold text-midas-text">{value}</p>
-  </div>
-);
-
 const OrderInfoSection: React.FC<OrderInfoSectionProps> = ({ customer }) => {
   return (
     <section className="bg-midas-gray-light py-16 sm:py-20">
@@ -22,10 +15,17 @@ const OrderInfoSection: React.FC<OrderInfoSectionProps> = ({ customer }) => {
           <h2 className="font-serif text-3xl font-bold text-midas-text mb-8 text-center">
             Thông tin của bạn
           </h2>
-          <div className="space-y-2 mb-8">
-            <InfoRow label="Họ và tên:" value={customer.name} />
-            <InfoRow label="Số điện thoại:" value={customer.phone} />
-            <InfoRow label="Địa chỉ:" value={customer.address} />
+          
+          <div className="space-y-3 mb-8 text-md">
+            <p className="text-midas-text/80">
+              Họ và tên: <strong id="customer-name" className="font-semibold text-midas-text">{customer.name}</strong>
+            </p>
+            <p className="text-midas-text/80">
+              Số điện thoại: <strong id="customer-phone" className="font-semibold text-midas-text">{customer.phone}</strong>
+            </p>
+            <p className="text-midas-text/80">
+              Địa chỉ: <strong id="customer-address" className="font-semibold text-midas-text">{customer.address}</strong>
+            </p>
           </div>
 
           <div className="mt-10 bg-midas-accent/10 border-l-4 border-midas-accent p-4 rounded-r-md">
