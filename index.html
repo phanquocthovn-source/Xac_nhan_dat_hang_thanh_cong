@@ -1,41 +1,16 @@
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đặt hàng thành công | Nội thất Midas</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác nhận đơn hàng thành công</title>
+
+    <!-- Tailwind CSS for styling the React components -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Confetti.js -->
+
+    <!-- Confetti animation script for the hero section -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-    <script>
-      // Tailwind Customization
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'midas-accent': '#FF6B00',
-              'midas-text': '#2c3e50',
-              'midas-white': '#ffffff',
-              'midas-gray-light': '#f8f8f8',
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        background-color: #f8f8f8; /* midas-gray-light */
-      }
-    </style>
+
     <script type="importmap">
     {
       "imports": {
@@ -45,9 +20,37 @@
       }
     }
     </script>
-  </head>
-  <body>
+
+    <!-- Custom Tailwind CSS configuration to match the brand style -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'midas-accent': '#FF6B00',
+              'midas-text': '#2c3e50',
+              'midas-white': '#ffffff',
+              'midas-gray-light': '#f9f9f9',
+            },
+            fontFamily: {
+              sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
+              serif: ['Georgia', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+      /* Base body styles to match the original design */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9; /* Matches midas-gray-light */
+      }
+    </style>
+</head>
+<body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
-  </body>
+</body>
 </html>
