@@ -18,18 +18,18 @@ const OrderInfoSection: React.FC<OrderInfoSectionProps> = ({ customer, order }) 
           </h2>
 
           <div id="thong-tin-xac-nhan">
-            <h3 className="font-serif text-2xl font-bold text-midas-text mb-4">Thông tin của bạn</h3>
-            <p className="my-2.5 text-base"><strong>Họ và tên:</strong> <span id="customer-name">{customer.name}</span></p>
-            <p className="my-2.5 text-base"><strong>Số điện thoại:</strong> <span id="customer-phone">{customer.phone}</span></p>
-            <p className="my-2.5 text-base"><strong>Địa chỉ:</strong> <span id="customer-address">{customer.address}</span></p>
+            <h3>Thông tin của bạn</h3>
+            <p><strong>Họ và tên:</strong> <span id="customer-name">{customer.name}</span></p>
+            <p><strong>Số điện thoại:</strong> <span id="customer-phone">{customer.phone}</span></p>
+            <p><strong>Địa chỉ:</strong> <span id="customer-address">{customer.address}</span></p>
             
-            <hr className="border-0 border-t border-gray-200 my-5" />
+            <hr style={{border: '0', borderTop: '1px solid #eee', margin: '20px 0'}} />
 
-            <h3 className="font-serif text-2xl font-bold text-midas-text mb-4">Thông tin đơn hàng</h3>
-            <p className="my-2.5 text-base"><strong>Sản phẩm:</strong> <span id="product-name">{order.productName}</span></p>
-            <p className="my-2.5 text-base"><strong>Kích thước:</strong> <span id="product-size">{order.size}</span></p>
-            <p className="my-2.5 text-base"><strong>Màu sắc:</strong> <span id="product-color">{order.color}</span></p>
-            <p className="my-2.5 text-base"><strong>Tổng tiền:</strong> <span id="product-price">{order.price}</span></p>
+            <h3>Thông tin đơn hàng</h3>
+            <p><strong>Sản phẩm:</strong> <span id="product-name">{order.productName}</span></p>
+            <p><strong>Kích thước:</strong> <span id="product-size">{order.size}</span></p>
+            <p><strong>Màu sắc:</strong> <span id="product-color">{order.color}</span></p>
+            <p><strong>Tổng tiền:</strong> <span id="product-price">{order.price}</span></p>
           </div>
 
           <div className="mt-12 bg-midas-accent/10 border-l-4 border-midas-accent p-4 rounded-r-md">

@@ -21,7 +21,7 @@ const App: React.FC = () => {
   useEffect(() => {
     try {
       const params = new URLSearchParams(window.location.search);
-      const fallbackText = 'Đang xử lý...';
+      const fallbackText = 'Chưa có thông tin';
 
       // Lấy thông tin khách hàng
       const name = params.get('ho_ten') || fallbackText;
