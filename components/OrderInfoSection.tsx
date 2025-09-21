@@ -17,19 +17,23 @@ const OrderInfoSection: React.FC<OrderInfoSectionProps> = ({ customer, order }) 
             Xác nhận thông tin
           </h2>
 
-          <div id="thong-tin-xac-nhan">
-            <h3>Thông tin của bạn</h3>
-            <p><strong>Họ và tên:</strong> <span id="customer-name">{customer.name}</span></p>
-            <p><strong>Số điện thoại:</strong> <span id="customer-phone">{customer.phone}</span></p>
-            <p><strong>Địa chỉ:</strong> <span id="customer-address">{customer.address}</span></p>
+          <div className="text-left text-midas-text">
+            <h3 className="text-xl font-bold text-midas-text mb-4">Thông tin của bạn</h3>
+            <div className="space-y-3 text-base leading-relaxed">
+              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Họ và tên:</strong> <span>{customer.name}</span></p>
+              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Số điện thoại:</strong> <span>{customer.phone}</span></p>
+              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Địa chỉ:</strong> <span>{customer.address}</span></p>
+            </div>
             
-            <hr style={{border: '0', borderTop: '1px solid #eee', margin: '20px 0'}} />
+            <hr className="my-8 border-t border-gray-200" />
 
-            <h3>Thông tin đơn hàng</h3>
-            <p><strong>Sản phẩm:</strong> <span id="product-name">{order.productName}</span></p>
-            <p><strong>Kích thước:</strong> <span id="product-size">{order.size}</span></p>
-            <p><strong>Màu sắc:</strong> <span id="product-color">{order.color}</span></p>
-            <p><strong>Tổng tiền:</strong> <span id="product-price">{order.price}</span></p>
+            <h3 className="text-xl font-bold text-midas-text mb-4">Thông tin đơn hàng</h3>
+            <div className="space-y-3 text-base leading-relaxed">
+              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Sản phẩm:</strong> <span>{order.productName}</span></p>
+              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Kích thước:</strong> <span>{order.size}</span></p>
+              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Màu sắc:</strong> <span>{order.color}</span></p>
+              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Tổng tiền:</strong> <span>{order.price}</span></p>
+            </div>
           </div>
 
           <div className="mt-12 bg-midas-accent/10 border-l-4 border-midas-accent p-4 rounded-r-md">

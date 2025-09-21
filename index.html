@@ -3,43 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cảm ơn bạn | Nội thất Midas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Đặt hàng thành công | Nội thất Midas</title>
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Confetti.js -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <script>
+      // Tailwind Customization
       tailwind.config = {
         theme: {
           extend: {
-            fontFamily: {
-              serif: ['Playfair Display', 'Lora', 'serif'],
-              sans: ['Montserrat', 'Lato', 'sans-serif'],
-            },
             colors: {
-              'midas-white': '#FFFFFF',
-              'midas-gray-light': '#F5F5F5',
-              'midas-text': '#333333',
               'midas-accent': '#FF6B00',
+              'midas-text': '#2c3e50',
+              'midas-white': '#ffffff',
+              'midas-gray-light': '#f8f8f8',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
             }
           }
         }
       }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
-  }
-}
-</script>
-</head>
-  <body class="bg-midas-white text-midas-text font-sans">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <style>
+      body {
+        background-color: #f8f8f8; /* midas-gray-light */
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.1.1/",
+        "react": "https://aistudiocdn.com/react@^19.1.1",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+      }
+    }
+    </script>
+  </head>
+  <body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
