@@ -7,13 +7,6 @@ interface OrderInfoSectionProps {
   order: OrderInfo;
 }
 
-const InfoRow: React.FC<{ label: string; id: string; value: string }> = ({ label, id, value }) => (
-  <p className="text-midas-text/90">
-    <strong className="font-semibold text-midas-text">{label}:</strong>{' '}
-    <span id={id}>{value}</span>
-  </p>
-);
-
 const OrderInfoSection: React.FC<OrderInfoSectionProps> = ({ customer, order }) => {
   return (
     <section className="bg-midas-gray-light py-16 sm:py-20">
@@ -26,21 +19,17 @@ const OrderInfoSection: React.FC<OrderInfoSectionProps> = ({ customer, order }) 
 
           <div id="thong-tin-xac-nhan">
             <h3 className="font-serif text-2xl font-bold text-midas-text mb-4">Thông tin của bạn</h3>
-            <div className="space-y-3 text-md">
-              <InfoRow label="Họ và tên" id="customer-name" value={customer.name} />
-              <InfoRow label="Số điện thoại" id="customer-phone" value={customer.phone} />
-              <InfoRow label="Địa chỉ" id="customer-address" value={customer.address} />
-            </div>
+            <p className="my-2.5 text-base"><strong>Họ và tên:</strong> <span id="customer-name">{customer.name}</span></p>
+            <p className="my-2.5 text-base"><strong>Số điện thoại:</strong> <span id="customer-phone">{customer.phone}</span></p>
+            <p className="my-2.5 text-base"><strong>Địa chỉ:</strong> <span id="customer-address">{customer.address}</span></p>
             
-            <hr className="border-0 border-t border-gray-200 my-8" />
+            <hr className="border-0 border-t border-gray-200 my-5" />
 
             <h3 className="font-serif text-2xl font-bold text-midas-text mb-4">Thông tin đơn hàng</h3>
-            <div className="space-y-3 text-md">
-                <InfoRow label="Sản phẩm" id="product-name" value={order.productName} />
-                <InfoRow label="Kích thước" id="product-size" value={order.size} />
-                <InfoRow label="Màu sắc" id="product-color" value={order.color} />
-                <InfoRow label="Tổng tiền" id="product-price" value={order.price} />
-            </div>
+            <p className="my-2.5 text-base"><strong>Sản phẩm:</strong> <span id="product-name">{order.productName}</span></p>
+            <p className="my-2.5 text-base"><strong>Kích thước:</strong> <span id="product-size">{order.size}</span></p>
+            <p className="my-2.5 text-base"><strong>Màu sắc:</strong> <span id="product-color">{order.color}</span></p>
+            <p className="my-2.5 text-base"><strong>Tổng tiền:</strong> <span id="product-price">{order.price}</span></p>
           </div>
 
           <div className="mt-12 bg-midas-accent/10 border-l-4 border-midas-accent p-4 rounded-r-md">
