@@ -20,19 +20,19 @@ const OrderInfoSection: React.FC<OrderInfoSectionProps> = ({ customer, order }) 
           <div className="text-left text-midas-text">
             <h3 className="text-xl font-bold text-midas-text mb-4">Thông tin của bạn</h3>
             <div className="space-y-3 text-base leading-relaxed">
-              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Họ và tên:</strong> <span>{customer.name}</span></p>
-              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Số điện thoại:</strong> <span>{customer.phone}</span></p>
-              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Địa chỉ:</strong> <span>{customer.address}</span></p>
+              <p><strong className="font-semibold">Họ và tên: </strong><span>{customer.name}</span></p>
+              <p><strong className="font-semibold">Số điện thoại: </strong><span>{customer.phone}</span></p>
+              <p><strong className="font-semibold">Địa chỉ: </strong><span>{customer.address}</span></p>
             </div>
             
             <hr className="my-8 border-t border-gray-200" />
 
             <h3 className="text-xl font-bold text-midas-text mb-4">Thông tin đơn hàng</h3>
             <div className="space-y-3 text-base leading-relaxed">
-              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Sản phẩm:</strong> <span>{order.productName}</span></p>
-              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Kích thước:</strong> <span>{order.size}</span></p>
-              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Màu sắc:</strong> <span>{order.color}</span></p>
-              <p className="flex flex-wrap"><strong className="w-36 font-semibold shrink-0">Tổng tiền:</strong> <span>{order.price}</span></p>
+              <p><strong className="font-semibold">Sản phẩm: </strong><span>{order.productName}</span></p>
+              <p><strong className="font-semibold">Kích thước: </strong><span>{order.size}</span></p>
+              <p><strong className="font-semibold">Màu sắc: </strong><span>{order.color}</span></p>
+              <p><strong className="font-semibold">Tổng tiền: </strong><span>{order.price}</span></p>
             </div>
           </div>
 
