@@ -50,14 +50,15 @@
                     const element = document.getElementById(elementId);
                     if (element) { element.textContent = params.get(paramName) || fallbackText; }
                 }
-                displayData('customer-name', 'ho_ten');
-                displayData('customer-phone', 'sdt');
-                displayData('customer-address', 'dia_chi');
-                displayData('product-name', 'san_pham');
-                displayData('product-size', 'kich_thuoc');
-                displayData('product-color', 'mau_sac');
-                displayData('product-payment', 'thanh_toan');
-                displayData('product-price', 'gia_tien');
+                // Corrected parameter names based on the new screenshot
+                displayData('customer-name', 'name-dat-hang');
+                displayData('customer-phone', 'sdt-dat-hang');
+                displayData('customer-address', 'dia-chi-dat-hang');
+                displayData('product-name', 'san-pham');
+                displayData('product-size', 'kich-thuoc');
+                displayData('product-color', 'mau-sac');
+                displayData('product-payment', 'hinh-thuc-thanh-toan');
+                displayData('product-price', 'gia-tien');
             } catch (e) { console.error('Lỗi khi hiển thị thông tin:', e); }
         });
     </script>
