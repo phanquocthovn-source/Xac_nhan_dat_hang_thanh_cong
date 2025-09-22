@@ -25,6 +25,17 @@ const App = () => {
                 return value ? decodeURIComponent(value.replace(/\+/g, ' ')) : fallbackText;
             };
 
+            const getPaymentMethod = (): string => {
+                const possibleKeys = ['hinh_thuc_thanh_toan', 'thanh_toan', 'payment_method', 'payment'];
+                for (const key of possibleKeys) {
+                    const value = params.get(key);
+                    if (value) {
+                        return decodeURIComponent(value.replace(/\+/g, ' '));
+                    }
+                }
+                return fallbackText;
+            }
+
             setCustomerInfo({
                 name: getData('ho_ten'),
                 phone: getData('sdt'),
@@ -35,7 +46,7 @@ const App = () => {
                 productName: getData('san_pham'),
                 size: getData('kich_thuoc'),
                 color: getData('mau_sac'),
-                paymentMethod: getData('hinh_thuc_thanh_toan'),
+                paymentMethod: getPaymentMethod(),
                 price: getData('gia_tien'),
             });
         } catch (e) {
