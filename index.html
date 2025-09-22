@@ -18,61 +18,18 @@
         .back-link a { display: inline-block; padding: 12px 25px; background-color: #ff9800; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; transition: background-color 0.3s; }
         .back-link a:hover { background-color: #e68900; }
     </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
 </head>
 <body>
-    <div class="confirmation-box">
-        <h1>Xác nhận thông tin</h1>
-        <div id="thong-tin-xac-nhan">
-            <h3>Thông tin của bạn</h3>
-            <p><strong>Họ và tên:</strong> <span id="customer-name"></span></p>
-            <p><strong>Số điện thoại:</strong> <span id="customer-phone"></span></p>
-            <p><strong>Địa chỉ:</strong> <span id="customer-address"></span></p>
-            <h3>Thông tin đơn hàng</h3>
-            <p><strong>Sản phẩm:</strong> <span id="product-name"></span></p>
-            <p><strong>Kích thước:</strong> <span id="product-size"></span></p>
-            <p><strong>Màu sắc:</strong> <span id="product-color"></span></p>
-            <p><strong>Hình thức thanh toán:</strong> <span id="product-payment"></span></p>
-            <p><strong>Tổng tiền:</strong> <span id="product-price"></span></p>
-        </div>
-        <div class="notice">
-            Trong vòng 24 giờ làm việc (8h00 - 17h00), đội ngũ Midas sẽ <strong>gọi điện thoại</strong> cho bạn để xác nhận thông tin chi tiết.
-        </div>
-        <div class="back-link">
-            <a href="https://sofabed.noithatmidas.com/">&larr; Quay lại trang chủ</a>
-        </div>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            try {
-                const params = new URLSearchParams(window.location.search);
-                const fallbackText = 'Chưa có thông tin';
-                function displayData(elementId, paramName) {
-                    const element = document.getElementById(elementId);
-                    if (element) { 
-                        const value = params.get(paramName);
-                        element.textContent = value ? decodeURIComponent(value.replace(/\+/g, ' ')) : fallbackText; 
-                    }
-                }
-                
-                // Use simplified parameter names that likely match the form submission
-                displayData('customer-name', 'ho_ten');
-                displayData('customer-phone', 'sdt');
-                displayData('customer-address', 'dia_chi');
-                displayData('product-name', 'san_pham');
-                displayData('product-size', 'kich_thuoc');
-                displayData('product-color', 'mau_sac');
-                displayData('product-payment', 'hinh_thuc_thanh_toan');
-                displayData('product-price', 'gia_tien');
-            } catch (e) { 
-                console.error('Lỗi khi hiển thị thông tin:', e); 
-                // Fallback in case of error
-                const fields = ['customer-name', 'customer-phone', 'customer-address', 'product-name', 'product-size', 'product-color', 'product-payment', 'product-price'];
-                fields.forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) el.textContent = 'Lỗi hiển thị dữ liệu';
-                });
-            }
-        });
-    </script>
+    <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>
