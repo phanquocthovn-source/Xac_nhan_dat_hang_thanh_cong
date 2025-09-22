@@ -48,18 +48,30 @@
                 const fallbackText = 'Chưa có thông tin';
                 function displayData(elementId, paramName) {
                     const element = document.getElementById(elementId);
-                    if (element) { element.textContent = params.get(paramName) || fallbackText; }
+                    if (element) { 
+                        const value = params.get(paramName);
+                        element.textContent = value ? decodeURIComponent(value.replace(/\+/g, ' ')) : fallbackText; 
+                    }
                 }
-                // Corrected parameter names based on the new screenshot
-                displayData('customer-name', 'name-dat-hang');
-                displayData('customer-phone', 'sdt-dat-hang');
-                displayData('customer-address', 'dia-chi-dat-hang');
-                displayData('product-name', 'san-pham');
-                displayData('product-size', 'kich-thuoc');
-                displayData('product-color', 'mau-sac');
-                displayData('product-payment', 'hinh-thuc-thanh-toan');
-                displayData('product-price', 'gia-tien');
-            } catch (e) { console.error('Lỗi khi hiển thị thông tin:', e); }
+                
+                // Use simplified parameter names that likely match the form submission
+                displayData('customer-name', 'ho_ten');
+                displayData('customer-phone', 'sdt');
+                displayData('customer-address', 'dia_chi');
+                displayData('product-name', 'san_pham');
+                displayData('product-size', 'kich_thuoc');
+                displayData('product-color', 'mau_sac');
+                displayData('product-payment', 'hinh_thuc_thanh_toan');
+                displayData('product-price', 'gia_tien');
+            } catch (e) { 
+                console.error('Lỗi khi hiển thị thông tin:', e); 
+                // Fallback in case of error
+                const fields = ['customer-name', 'customer-phone', 'customer-address', 'product-name', 'product-size', 'product-color', 'product-payment', 'product-price'];
+                fields.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) el.textContent = 'Lỗi hiển thị dữ liệu';
+                });
+            }
         });
     </script>
 </body>
