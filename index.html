@@ -4,53 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xác nhận đơn hàng thành công</title>
-
-    <!-- Tailwind CSS for styling the React components -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Confetti animation script for the hero section -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-
-    <script type="importmap">
-    {
-      "imports": {
-        "react/": "https://aistudiocdn.com/react@^19.1.1/",
-        "react": "https://aistudiocdn.com/react@^19.1.1",
-        "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
-      }
-    }
-    </script>
-
-    <!-- Custom Tailwind CSS configuration to match the brand style -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'midas-accent': '#FF6B00',
-              'midas-text': '#2c3e50',
-              'midas-white': '#ffffff',
-              'midas-gray-light': '#f9f9f9',
-            },
-            fontFamily: {
-              sans: ['Segoe UI', 'Tahoma', 'Geneva', 'Verdana', 'sans-serif'],
-              serif: ['Georgia', 'serif'],
-            }
-          }
-        }
-      }
-    </script>
-    
     <style>
-      /* Base body styles to match the original design */
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-color: #f9f9f9; /* Matches midas-gray-light */
-      }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f9f9f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 20px; color: #333; }
+        .confirmation-box { background-color: #ffffff; padding: 30px 40px; border-radius: 12px; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07); max-width: 650px; width: 100%; text-align: left; border-top: 5px solid #ff9800; }
+        h1, h3 { text-align: center; color: #2c3e50; }
+        h1 { font-size: 28px; margin-bottom: 25px; }
+        h3 { font-size: 20px; margin-top: 25px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        p { margin: 12px 0; font-size: 16px; line-height: 1.7; }
+        p strong { display: inline-block; width: 150px; color: #555; }
+        span { font-weight: 500; }
+        .notice { margin-top: 30px; padding: 15px; background-color: #fff3e0; border-left: 4px solid #ff9800; font-size: 15px; }
+        .back-link { text-align: center; margin-top: 30px; }
+        .back-link a { display: inline-block; padding: 12px 25px; background-color: #ff9800; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; transition: background-color 0.3s; }
+        .back-link a:hover { background-color: #e68900; }
     </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <div class="confirmation-box">
+        <h1>Xác nhận thông tin</h1>
+        <div id="thong-tin-xac-nhan">
+            <h3>Thông tin của bạn</h3>
+            <p><strong>Họ và tên:</strong> <span id="customer-name"></span></p>
+            <p><strong>Số điện thoại:</strong> <span id="customer-phone"></span></p>
+            <p><strong>Địa chỉ:</strong> <span id="customer-address"></span></p>
+            <h3>Thông tin đơn hàng</h3>
+            <p><strong>Sản phẩm:</strong> <span id="product-name"></span></p>
+            <p><strong>Kích thước:</strong> <span id="product-size"></span></p>
+            <p><strong>Màu sắc:</strong> <span id="product-color"></span></p>
+            <p><strong>Hình thức thanh toán:</strong> <span id="product-payment"></span></p>
+            <p><strong>Tổng tiền:</strong> <span id="product-price"></span></p>
+        </div>
+        <div class="notice">
+            Trong vòng 24 giờ làm việc (8h00 - 17h00), đội ngũ Midas sẽ <strong>gọi điện thoại</strong> cho bạn để xác nhận thông tin chi tiết.
+        </div>
+        <div class="back-link">
+            <a href="https://sofabed.noithatmidas.com/">&larr; Quay lại trang chủ</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                const fallbackText = 'Chưa có thông tin';
+                function displayData(elementId, paramName) {
+                    const element = document.getElementById(elementId);
+                    if (element) { element.textContent = params.get(paramName) || fallbackText; }
+                }
+                displayData('customer-name', 'ho_ten');
+                displayData('customer-phone', 'sdt');
+                displayData('customer-address', 'dia_chi');
+                displayData('product-name', 'san_pham');
+                displayData('product-size', 'kich_thuoc');
+                displayData('product-color', 'mau_sac');
+                displayData('product-payment', 'thanh_toan');
+                displayData('product-price', 'gia_tien');
+            } catch (e) { console.error('Lỗi khi hiển thị thông tin:', e); }
+        });
+    </script>
 </body>
 </html>
