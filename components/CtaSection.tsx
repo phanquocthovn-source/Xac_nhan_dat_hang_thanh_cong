@@ -1,4 +1,5 @@
 import React from 'react';
+import ArrowLeftIcon from './icons/ArrowLeftIcon';
 
 const CtaSection = () => {
     return (
@@ -17,6 +18,17 @@ const CtaSection = () => {
                             Theo dõi trên Facebook
                         </a>
                     </div>
+                </div>
+                <div style={{ marginTop: '3rem' }}>
+                    <button
+                        onClick={() => window.history.back()}
+                        className="btn btn--secondary"
+                        style={{ display: 'inline-flex', alignItems: 'center' }}
+                        aria-label="Quay lại trang trước"
+                    >
+                        <ArrowLeftIcon style={{ width: '20px', height: '20px', marginRight: '8px' }} />
+                        Quay lại trang trước
+                    </button>
                 </div>
             </div>
         </section>
