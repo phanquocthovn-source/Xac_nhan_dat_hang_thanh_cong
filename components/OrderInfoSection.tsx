@@ -34,7 +34,7 @@ const OrderInfoSection: React.FC<OrderInfoSectionProps> = ({ orderDetails }) => 
                         <li><span>Kích thước:</span> <strong>{orderDetails.size}</strong></li>
                         <li><span>Màu sắc:</span> <strong>{orderDetails.color}</strong></li>
                         <li><span>Hình thức thanh toán:</span> <strong>{orderDetails.paymentMethod}</strong></li>
-                        <li><span>Tổng tiền:</span> <strong>{orderDetails.total}</strong></li>
+                        <li><span>Tổng cộng:</span> <strong>{orderDetails.total}</strong></li>
                     </ul>
                     
                     <div className="notification-box">

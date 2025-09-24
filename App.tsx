@@ -45,7 +45,7 @@ const App = () => {
                 size: getData('kich_thuoc'),
                 color: getData('mau_sac'),
                 paymentMethod: getData('thanh_toan'),
-                total: getData('tong_tien'),
+                total: getData('tong_cong'),
             });
 
         } catch (e) {
